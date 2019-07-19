@@ -16,5 +16,12 @@
   "bugs": {
     "url": "https://github.com/walker213/brick/issues"
   },
-  "homepage": "https://github.com/walker213/brick#readme"
+  "homepage": "https://github.com/walker213/brick#readme",
+  "devDependencies": {
+    "awesome-typescript-loader": "^5.2.1",
+    "typescript": "^3.5.3",
+    "webpack": "^4.36.1",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.7.2"
+  }
 }
