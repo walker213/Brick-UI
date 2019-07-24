@@ -11,6 +11,9 @@ module.exports = {
 		library:'brick',
 		libraryTarget:'umd'
 	},
+	resolve: {
+		extensions:['.ts','.tsx','.js','.jsx']
+	},
 	module: {
 		rules: [
 			{
