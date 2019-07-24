@@ -4,7 +4,9 @@
   "description": "Simple React components",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -18,11 +20,18 @@
   },
   "homepage": "https://github.com/walker213/brick#readme",
   "devDependencies": {
+    "@types/react": "^16.8.23",
+    "@types/react-dom": "^16.8.5",
     "awesome-typescript-loader": "^5.2.1",
+    "csstype": "^2.6.6",
     "html-webpack-plugin": "^3.2.0",
     "typescript": "^3.5.3",
     "webpack": "^4.36.1",
     "webpack-cli": "^3.3.6",
     "webpack-dev-server": "^3.7.2"
+  },
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   }
 }
