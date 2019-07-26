@@ -1,14 +1,33 @@
 {
   "compilerOptions": {
-    "module": "es6", // 使用 ES2015 模块
-    "target": "es6", // 编译成 ES2015 (Babel 将做剩下的事情)
-    "allowSyntheticDefaultImports": true, // 看下面
-    "sourceMap": true, // 使 TypeScript 生成 sourcemaps
-    "jsx": "react", // 开启 JSX 模式, 但是 "preserve" 告诉 TypeScript 不要转换它(我们将使用 Babel)
-		"strict": true,
-		"moduleResolution": "node"
+    "declaration": true,
+    "baseUrl": ".",
+    "outDir": "dist",
+    "module": "esnext",
+    "target": "es5",
+    "lib": ["es6","dom"],
+    "sourceMap": true, 
+    "jsx": "react", 
+    "moduleResolution": "node",
+    "rootDir": ".",
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "importHelpers": true,
+    "allowSyntheticDefaultImports": true, 
+    "noUnusedLocals": true,
   },
+  "include": [],
   "exclude": [
-    "node_modules" // 这个目录下的代码不会被 typescript 处理
+    "node_modules",
+    "build",
+    "dist",
+    "scripts",
+    "acceptance-tests",
+    "webpack",
+    "jest",
+    "src/setupTests.ts",
+    "*.js"
   ]
 }
