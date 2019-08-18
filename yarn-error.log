@@ -1,5 +1,5 @@
 Arguments: 
-  D:\install\node\node.exe D:\install\Yarn\bin\yarn.js xxx
+  D:\install\node\node.exe D:\install\Yarn\bin\yarn.js publish --access public
 
 PATH: 
   C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;D:\install\Microsoft VS Code\bin;D:\install\Git\cmd;D:\install\node\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;D:\install\Yarn\bin\;D:\install\;C:\Users\gindoki\AppData\Local\Microsoft\WindowsApps;C:\Users\gindoki\AppData\Roaming\npm;C:\Users\gindoki\AppData\Local\Yarn\bin
@@ -14,17 +14,13 @@ Platform:
   win32 x64
 
 Trace: 
-  SyntaxError: D:\program\brick\package.json: Unexpected token x in JSON at position 429
-      at JSON.parse (<anonymous>)
-      at D:\install\Yarn\lib\cli.js:1625:59
-      at Generator.next (<anonymous>)
-      at step (D:\install\Yarn\lib\cli.js:304:30)
-      at D:\install\Yarn\lib\cli.js:315:13
+  Error: connect ETIMEDOUT 209.95.59.244:80
+      at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1117:14)
 
 npm manifest: 
   {
-    "name": "brick",
-    "version": "1.0.0",
+    "name": "@lwg/brick",
+    "version": "0.0.1",
     "description": "Simple React components",
     "main": "dist/lib/index.js",
     "types": "dist/lib/index",
@@ -32,7 +28,7 @@ npm manifest:
       "start": "cross-env NODE_ENV=development webpack-dev-server --config webpack.config.dev.js",
       "build": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
       "test": "cross-env NODE_ENV=test jest --config=jest.config.js --runInBand",
-      xxx: "cross-env NODE_ENV=test jest JEST_JUNIT_OUTPUT=./test-results/jest/results.xml --config=jest.config.js --runInBand"
+      "ci": "cross-env NODE_ENV=test JEST_JUNIT_OUTPUT=./test-results/jest/results.xml jest --config=jest.config.js --runInBand"
     },
     "repository": {
       "type": "git",
@@ -64,6 +60,7 @@ npm manifest:
       "enzyme-adapter-react-16": "^1.14.0",
       "html-webpack-plugin": "^3.2.0",
       "jest": "^24.8.0",
+      "jest-junit": "^7.0.0",
       "node-sass": "^4.12.0",
       "react-test-renderer": "^16.8.6",
       "sass-loader": "^7.1.0",
@@ -79,7 +76,8 @@ npm manifest:
     "dependencies": {
       "react": "^16.8.6",
       "react-dom": "^16.8.6"
-    }
+    },
+    "files":["/dist/**/*"]
   }
 
 yarn manifest: 
