@@ -1,5 +1,5 @@
 {
-  "name": "@lwg/brick",
+  "name": "@gindoki/brick",
   "version": "0.0.1",
   "description": "Simple React components",
   "main": "dist/lib/index.js",
