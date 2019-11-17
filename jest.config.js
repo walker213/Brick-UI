@@ -3,10 +3,10 @@ module.exports = {
   clearMocks: false,
   
   collectCoverage: true, // 收集测试覆盖率
-  reporters: ["default","jest-junit"],
-  collectCoverageFrom: ["lib/**/*.{ts,tsx}","!**/node_modules/**"],
+  reporters: ["default","jest-junit"],  // jest-junit是test result的分析报表
+  collectCoverageFrom: ["lib/**/*.{ts,tsx}","!**/node_modules/**"],  // 计入覆盖率统计的文件
   coverageDirectory: "coverage",  // 覆盖率报告文件夹
-  coverageReporters:['text','lcov'],
+  coverageReporters:['text','lcov'],  // 覆盖率分析报告
   
   moduleFileExtensions: ["js", "json", "jsx", "node", "ts", "tsx"],
   moduleDirectories: ["node_modules"],
@@ -16,7 +16,7 @@ module.exports = {
       "<rootDir>/test/__mocks__/fileMock.js",
     "\\.(css|less|sass|scss)$": "<rootDir>/test/__mocks__/cssMock.js"
   },
-
+  // 测试用例文件位置
   testMatch: ["<rootDir>/**/__tests__/**/*.unit.(js|jsx|ts|tsx)"],
   transform: {
     "^.+unit\\.(js|jsx)$": "babel-jest",

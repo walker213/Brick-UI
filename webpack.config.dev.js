@@ -6,8 +6,9 @@ module.exports = merge(common, {
   mode: "development",
   plugins: [
     new HtmlWebpackPlugin({
-      title: "brick - Reack",
+      // 根据模板html打包一个html到output目录,并自动导入打包后的js文件
+      title: "brick - Reack", // title是变量字段，在模板html中通过 <%= htmlWebpackPlugin.options.title %> 获取
       template: "index.html"
     })
-  ],
+  ]
 });

@@ -2,7 +2,8 @@ const common = require("./webpack.config.common");
 const merge = require("webpack-merge");
 
 module.exports = merge(common, {
-  mode: "production",
+  mode: "production",  // production模式压缩代码等等
+  // 不打包react和react-dom
   externals: {
     react: {
       commonjs: "react",

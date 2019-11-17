@@ -3,11 +3,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: {
-    index: "./lib/index.tsx"
+    brick: "./lib/index.tsx"  // index改为brick直接是文件名？
   },
   output: {
     path: path.resolve(__dirname, "dist/lib"),
-    library: "brick",
+    // library: "brick",
     libraryTarget: "umd"
   },
   resolve: {
@@ -23,6 +23,7 @@ module.exports = {
         loader: 'svg-sprite-loader',
       }, {
         test: /\.scss$/,
+        // sass-loader将scss转成css, css-loader将css代码转成js对象，style-loader将js对象转成<style>csscode...</style>
         use:['style-loader','css-loader','sass-loader']
       }
     ]

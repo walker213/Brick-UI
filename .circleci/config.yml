@@ -28,6 +28,7 @@ jobs:
       - attach_workspace:
           at: .
       - run: yarn build
+      # 以下文件不要删，持久化，以供下个任务（即publish）用
       - persist_to_workspace:
           root: .
           paths:
@@ -41,6 +42,8 @@ jobs:
       - checkout
       - attach_workspace:
           at: .
+      # "ci": "cross-env NODE_ENV=test JEST_JUNIT_OUTPUT=./test-results/jest/results.xml jest --config=jest.config.js --runInBand"
+      # 指定生成的jest-junit报表存放位置，以便CI识别并显示结果
       - run: yarn ci
       - store_test_results:
           path: test-results
