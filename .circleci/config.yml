@@ -52,6 +52,7 @@ jobs:
     steps:
       - attach_workspace:
           at: .
+      # 登录npm，获取token并设置成circleci环境变量$NPM_TOKEN
       - run: npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
       - run: npm publish
 
@@ -62,12 +63,18 @@ workflows:
   build_accept_deploy:
     jobs:
       - prepare
-      - build:
-          requires:
-            - test
       - test:
           requires:
             - prepare
+      - build:
+          requires:
+            - test
+          # build 也需要tags filters，才能修复circle ci不能识别tags的bug？
+          filters:
+            tags:
+              only: /^v[0-9]+(\.[0-9]+)*/
+            branches:
+              ignore: /.*/     
       - publish:
           requires:
             - build
