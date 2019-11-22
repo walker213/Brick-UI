@@ -72,9 +72,7 @@ workflows:
           # build 也需要tags filters，才能修复circle ci不能识别tags的bug？
           filters:
             tags:
-              only: /^v[0-9]+(\.[0-9]+)*/
-            branches:
-              ignore: /.*/     
+              only: /.*/    
       - publish:
           requires:
             - build
