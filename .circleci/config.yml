@@ -52,6 +52,7 @@ jobs:
     steps:
       - attach_workspace:
           at: .
+      # 登录npm，获取token并设置成circleci环境变量$NPM_TOKEN
       - run: npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
       - run: npm publish
 
@@ -62,17 +63,20 @@ workflows:
   build_accept_deploy:
     jobs:
       - prepare
-      - build:
-          requires:
-            - test
       - test:
           requires:
             - prepare
+      - build:
+          requires:
+            - test
+            filters:
+            tags:
+              only: /^v.*/
       - publish:
           requires:
             - build
           filters:
             tags:
-              only: /^v[0-9]+(\.[0-9]+)*/
+              only: /^v.*/
             branches:
               ignore: /.*/
