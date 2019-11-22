@@ -69,7 +69,8 @@ workflows:
       - build:
           requires:
             - test
-            filters:
+          # build也需要tags filters，才能修复circle ci不能识别tags的bug？
+          filters:
             tags:
               only: /^v.*/
       - publish:
