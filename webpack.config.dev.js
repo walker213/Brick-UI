@@ -3,6 +3,9 @@ const merge = require('webpack-merge')
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = merge(common, {
+  entry: {
+    brick: "./example.tsx" // index改为brick直接是文件名？
+  },
   mode: "development",
   plugins: [
     new HtmlWebpackPlugin({
