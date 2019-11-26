@@ -3,11 +3,11 @@ import classnames from "classnames";
 import "./importIcon";  // 引入的svg文件，经过svg-sprite-loader处理会引入到html中？
 import "./index.scss";
 
-interface IconProps extends React.SVGAttributes<SVGElement> {
+interface Props extends React.SVGAttributes<SVGElement> {
   name: string;
 }
 
-const Icon: React.FunctionComponent<IconProps> = ({
+const Icon: React.FunctionComponent<Props> = ({
   className,
   name,
   ...restProps

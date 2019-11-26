@@ -2,6 +2,7 @@ import React from "react";
 import ReactDom from "react-dom";
 import { HashRouter as Router, Route, Link } from "react-router-dom";
 import IconExample from "./lib/icon/iconExample";
+import DialogExample from "./lib/dialog/dialogExample";
 
 export const Index = () => {
   return (
@@ -16,10 +17,14 @@ export const Index = () => {
           <li>
             <Link to="/button">Button</Link>
           </li>
+          <li>
+            <Link to="/dialog">Dialog</Link>
+          </li>
         </ul>
       </aside>
       <main>
         <Route path="/icon" component={IconExample}></Route>
+        <Route path="/dialog" component={DialogExample}></Route>
       </main>
     </Router>
   );
