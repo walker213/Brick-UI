@@ -1,7 +1,7 @@
 import renderer from "react-test-renderer";
 import React from "react";
 import { mount } from 'enzyme';
-import Icon from "../icon";
+import Icon from "../index";
 
 describe("Icon test", () => {
   it("render successfully", () => {

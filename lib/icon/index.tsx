@@ -1,7 +1,7 @@
 import React from "react";
 import classnames from "classnames";
 import "./importIcon";  // 引入的svg文件，经过svg-sprite-loader处理会引入到html中？
-import "./icon.scss";
+import "./index.scss";
 
 interface IconProps extends React.SVGAttributes<SVGElement> {
   name: string;
