@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDom from "react-dom";
 import { HashRouter as Router, Route, Link } from "react-router-dom";
-import IconExample from "./lib/icon/iconExample";
-import DialogExample from "./lib/dialog/dialogExample";
+import IconExample from "./lib/components/icon/iconExample";
+import DialogExample from "./lib/components/dialog/dialogExample";
 
 export const Index = () => {
   return (
