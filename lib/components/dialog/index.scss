@@ -1,9 +1,10 @@
+@import '../../style/default.scss';
+
 .bui-dialog {
   position: fixed;
-  width: 10em;
-  height: 10em;
+  width: 20em;
   border-radius: 4px;
-  top: 50%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
   background: #fff;
@@ -16,4 +17,29 @@
     width: 100%;
     background-color: rgba(0, 0, 0, 0.5);
   }
+
+  &-header{
+    padding: 16px 16px;
+    font-size: 22px;
+    border-bottom: 1px solid $border-color;
+  }
+  
+  &-main{
+    padding: 16px 16px;
+    min-height: 6em;
+  }
+
+  &-footer{
+    display: flex;
+    justify-content: flex-end;
+    padding: 8px 16px;
+    border-top: 1px solid $border-color;
+  }
+
+  &-close {
+    position: absolute;
+    top: 0;
+    right: 10px;
+  }
+
 }
