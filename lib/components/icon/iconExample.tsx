@@ -1,8 +1,12 @@
-import React from 'react'
-import Icon from './index';
+import React from "react";
+import { Icon } from "../../index";
 
 const IconExample: React.FunctionComponent = () => {
-	return <div><Icon name='wechat'></Icon></div>
-}
+  return (
+    <div>
+      <Icon name="wechat"></Icon>
+    </div>
+  );
+};
 
-export default IconExample
+export default IconExample;
