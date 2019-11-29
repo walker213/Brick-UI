@@ -8,13 +8,17 @@ const acp = addClassPrefixHOF("bui-dialog");
 interface Props extends React.AllHTMLAttributes<HTMLDivElement> {
   visible: boolean;
   footer?: Array<ReactElement> | null;
-  onOk: React.MouseEventHandler;
-  onCancel: React.MouseEventHandler;
+  onOk?: React.MouseEventHandler;
+  onCancel?: React.MouseEventHandler;
   mask?: boolean;
   maskClosable?: boolean;
 }
 
-const Dialog: React.FunctionComponent<Props> = ({
+type Fhp<T> = React.FunctionComponent<T> & {
+	alert: (content:string)=>void
+}
+
+const Dialog: Fhp<Props> = ({
   visible,
   footer,
   onCancel,
@@ -65,6 +69,22 @@ const Dialog: React.FunctionComponent<Props> = ({
 Dialog.defaultProps = {
   mask: true,
   maskClosable: true
+};
+
+Dialog.alert = (content: string) => {
+  const closeHandler = () => {
+		ReactDom.render(React.cloneElement(component, { visible: false }), div);
+		ReactDom.unmountComponentAtNode(div);
+		div.remove();
+  };
+  const component = (
+    <Dialog visible={true} onCancel={closeHandler}>
+      {content}
+    </Dialog>
+  );
+  const div = document.createElement("div");
+  document.body.append(div);
+  ReactDom.render(component, div);
 };
 
 export default Dialog;

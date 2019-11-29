@@ -7,7 +7,8 @@ const IconExample: React.FunctionComponent = () => {
     <div>
       <button
         onClick={() => {
-          setIsVisible(!isVisible);
+          // setIsVisible(!isVisible);
+          Dialog.alert('hi')
         }}
       >
         open
