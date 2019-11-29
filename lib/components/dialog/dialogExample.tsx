@@ -12,7 +12,13 @@ const IconExample: React.FunctionComponent = () => {
       >
         open
       </button>
-      <Dialog visible={isVisible}>hihi</Dialog>
+      <Dialog
+        visible={isVisible}
+        onOk={()=>{}}
+        onCancel={()=>{setIsVisible(false)}}
+      >
+        hihi
+      </Dialog>
     </div>
   );
 };
