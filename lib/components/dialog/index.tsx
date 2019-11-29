@@ -1,4 +1,5 @@
 import React, { Fragment, ReactElement } from "react";
+import ReactDom from "react-dom";
 import { addClassPrefixHOF } from "../../utils/classes";
 import "./index.scss";
 
@@ -22,7 +23,7 @@ const Dialog: React.FunctionComponent<Props> = ({
   maskClosable,
   children
 }) => {
-	const footerPannel =
+  const footerPannel =
     footer === null ? null : (
       <footer className={acp("footer")}>
         {footer ? (
@@ -35,8 +36,8 @@ const Dialog: React.FunctionComponent<Props> = ({
         )}
       </footer>
     );
-	
-	return visible ? (
+
+  const component = visible ? (
     <Fragment>
       <div
         className={acp("mask")}
@@ -48,13 +49,17 @@ const Dialog: React.FunctionComponent<Props> = ({
         }}
       ></div>
       <div className={acp()}>
-        <div className={acp("close")} onClick={onCancel}>x</div>
+        <div className={acp("close")} onClick={onCancel}>
+          x
+        </div>
         <header className={acp("header")}>title</header>
         <main className={acp("main")}>{children}</main>
         {footerPannel}
       </div>
     </Fragment>
   ) : null;
+
+  return ReactDom.createPortal(component, document.body);
 };
 
 Dialog.defaultProps = {

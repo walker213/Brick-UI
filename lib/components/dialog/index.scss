@@ -3,9 +3,10 @@
 .bui-dialog {
   position: fixed;
   width: 20em;
-  border-radius: 4px;
   top: 30%;
   left: 50%;
+  z-index: 9999;
+  border-radius: 4px;
   transform: translate(-50%, -50%);
   background: #fff;
 
@@ -13,6 +14,7 @@
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 9998;
     height: 100%;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.5);
