@@ -4,7 +4,7 @@ import { Icon } from "../../index";
 const IconExample: React.FunctionComponent = () => {
   return (
     <div>
-      <Icon name="wechat"></Icon>
+      <Icon name="swap"></Icon>
     </div>
   );
 };

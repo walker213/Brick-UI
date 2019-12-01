@@ -27,8 +27,14 @@
   }
   
   &-main{
+    display: flex;
     padding: 16px 16px;
     min-height: 6em;
+    .bui-icon{
+      width: 22px;
+      height: 22px;
+      margin-right: 1em;
+    }
   }
 
   &-footer{
