@@ -5,26 +5,25 @@ const IconExample: React.FunctionComponent = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   function info() {
-    Dialog.info({ content: "hi" });
+    Dialog.info({ title: "Info dialog", content: "hi" });
   }
   function success() {
-    Dialog.success({ content: "hi" });
-  } 
+    Dialog.success({ title: "Success dialog", content: "hi" });
+  }
   function error() {
     Dialog.error({ content: "hi" });
-  } 
+  }
   function warning() {
     Dialog.warning({ content: "hi" });
-  } 
+  }
   function confirm() {
     Dialog.confirm({ content: "hi" });
-  } 
+  }
   return (
     <div>
       <button
         onClick={() => {
-          // setIsVisible(!isVisible);
-          Dialog.confirm({ content: "hi" });
+          setIsVisible(!isVisible);
         }}
       >
         普通dialog

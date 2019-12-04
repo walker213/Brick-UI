@@ -7,13 +7,13 @@ import "./index.scss";
 const acp = addClassPrefixHOF("bui-dialog");
 
 interface Props extends React.HTMLAttributes<Element> {
-	visible: boolean;
+  visible: boolean;
   onOk: React.MouseEventHandler;
-	onCancel: React.MouseEventHandler;
-	header?: ReactNode | null;
+  onCancel: React.MouseEventHandler;
+  header?: ReactNode | null; // 如何改成title？
   footer?: Array<ReactElement> | null;
   mask?: boolean;
-	maskClosable?: boolean;
+  maskClosable?: boolean;
 }
 
 interface ApiParams {
@@ -39,20 +39,32 @@ type Fhp<T> = React.FunctionComponent<T> & {
 };
 
 const Dialog: Fhp<Props> = props => {
-	const { visible, title, footer, onCancel, onOk, mask, maskClosable, children } = props;
-	const headerPannel =
-    title === null ? null : (
-      <Fragment>
-        <div className={acp("close")} onClick={onCancel}>
-          x
-        </div>
-        <header className={acp("header")}>{title||'title'}</header>
-      </Fragment>
-    );
-	
+  const {
+    visible,
+    header,
+    footer,
+    onCancel,
+    onOk,
+    mask,
+    maskClosable,
+    children
+  } = props;
+  const isSimpleDialog = header === null;
+  const headerPannel = isSimpleDialog ? null : (
+    <Fragment>
+      <div className={acp("close")} onClick={onCancel}>
+        x
+      </div>
+      <header className={acp("header")}>{header || "title"}</header>
+    </Fragment>
+  );
+
   const footerPannel =
     footer === null ? null : (
-      <footer className={acp("footer")}>
+      <footer
+        className={acp("footer")}
+        style={{ borderTopWidth: isSimpleDialog ? "0" : "1px" }}
+      >
         {footer ? (
           footer
         ) : (
@@ -96,12 +108,12 @@ const dialogMaker = (
   defaultIcon: ReactNode,
   isConfirm: boolean = false
 ): dialogMethods => {
-	const { title, content, onOk, onCancel, okText, cancelText, icon } = params;
-	
-	const div = document.createElement("div");
+  const { title, content, onOk, onCancel, okText, cancelText, icon } = params;
+
+  const div = document.createElement("div");
   document.body.append(div);
-	
-	const destroy = () => {
+
+  const destroy = () => {
     // ReactDom.render(React.cloneElement(component, { visible: false }), div);
     ReactDom.unmountComponentAtNode(div);
     div.remove();
@@ -114,8 +126,8 @@ const dialogMaker = (
     onCancel && onCancel(e);
     destroy();
   };
-	
-	const footer = isConfirm
+
+  const footer = isConfirm
     ? [
         <button onClick={handleCancelClick} key="cancel">
           {cancelText || "取消"}
@@ -130,33 +142,55 @@ const dialogMaker = (
         </button>
       ];
   const component = (
-    <Dialog visible={true} onCancel={destroy} onOk={() => {}} footer={footer}>
+    <Dialog
+      visible={true}
+      onCancel={destroy}
+      onOk={() => {}}
+      footer={footer}
+      header={null}
+    >
       {icon ? icon : defaultIcon}
       <div>
-        <div>{title}</div>
+        {title ? <div className={acp("title")}>{title}</div> : null}
         <div>{content}</div>
       </div>
     </Dialog>
   );
-  
+
   ReactDom.render(component, div);
   return { destroy };
 };
 
 Dialog.info = (params: ApiParams) => {
-  return dialogMaker(params, <Icon name="reddit" />);
+  return dialogMaker(
+    params,
+    <Icon name="info-circle" className="bui-icon-info" />
+  );
 };
 Dialog.success = (params: ApiParams) => {
-  return dialogMaker(params, <Icon name="reddit" />);
+  return dialogMaker(
+    params,
+    <Icon name="check-circle" className="bui-icon-success" />
+  );
 };
 Dialog.error = (params: ApiParams) => {
-  return dialogMaker(params, <Icon name="reddit" />);
+  return dialogMaker(
+    params,
+    <Icon name="close-circle" className="bui-icon-error" />
+  );
 };
 Dialog.warning = (params: ApiParams) => {
-  return dialogMaker(params, <Icon name="reddit" />);
+  return dialogMaker(
+    params,
+    <Icon name="warning-circle" className="bui-icon-warning" />
+  );
 };
 Dialog.confirm = (params: ApiParams) => {
-  return dialogMaker(params, <Icon name="reddit" />, true);
+  return dialogMaker(
+    params,
+    <Icon name="question-circle" className="bui-icon-warning" />,
+    true
+  );
 };
 
 export default Dialog;

@@ -1,8 +1,25 @@
-[class^=bui-] {
+@import "./default.scss";
+
+[class^="bui-"] {
   box-sizing: border-box;
   font-size: 14px;
   &::after,
   &::before {
     box-sizing: border-box;
+  }
+}
+
+.bui-icon {
+  &-info {
+    color: $info-color;
+  }
+  &-success {
+    color: $success-color;
+  }
+  &-error {
+    color: $error-color;
+  }
+  &-warning {
+    color: $warning-color;
   }
 }
