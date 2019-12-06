@@ -1,3 +1,3 @@
-import './style/index.scss'
+import './styles/index.scss'
 export { default as Icon } from "./components/icon";
 export { default as Dialog } from "./components/dialog";
