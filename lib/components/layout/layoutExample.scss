@@ -1,0 +1,19 @@
+@import '../../styles//default.scss';
+
+.bui-layout{
+	&-header,&-footer{
+		background-color: lighten($main-color, 20%)
+	}
+	&-content{
+		background-color: $main-color
+	}
+	&-sider{
+		background-color: lighten($main-color, 10%)
+	}
+	&-header,&-footer,&-content,&-sider{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: #fff;
+	}
+}

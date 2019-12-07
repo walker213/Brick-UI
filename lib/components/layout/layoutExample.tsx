@@ -1,5 +1,6 @@
 import React from "react";
 import { Layout } from "../../index";
+import './layoutExample.scss'
 
 const { Header, Footer, Content, Sider } = Layout;
 
