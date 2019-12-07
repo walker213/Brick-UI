@@ -1,6 +1,6 @@
 @import '../../styles//default.scss';
 
-.bui-layout{
+.bui-example .bui-layout{
 	&-header,&-footer{
 		background-color: lighten($main-color, 20%)
 	}

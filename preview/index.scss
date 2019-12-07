@@ -1,0 +1,14 @@
+@import "../lib/styles/default.scss";
+
+.bui-preview > .bui-layout {
+  &-header {
+    box-shadow: 0 2px 8px #f0f1f2;
+  }
+  &-footer {
+    background-color: #000;
+    color: #fff;
+  }
+  & > .bui-layout-sider {
+    border-right: 1px solid $border-color;
+  }
+}

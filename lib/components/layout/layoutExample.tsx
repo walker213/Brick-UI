@@ -6,7 +6,7 @@ const { Header, Footer, Content, Sider } = Layout;
 
 const LayoutExample: React.FunctionComponent = () => {
   return (
-    <div>
+    <div className='bui-example'>
       <section>
         <h1>第一个例子</h1>
         <Layout>
