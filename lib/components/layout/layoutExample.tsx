@@ -9,41 +9,41 @@ const LayoutExample: React.FunctionComponent = () => {
       <section>
         <h1>第一个例子</h1>
         <Layout>
-          <Header />
-          <Content />
-          <Footer />
+          <Header>Header</Header>
+          <Content>Content</Content>
+          <Footer>Footer</Footer>
         </Layout>
       </section>
       <section>
         <h1>第二个例子</h1>
         <Layout>
-          <Header />
+          <Header>Header</Header>
           <Layout>
-            <Sider />
-            <Content />
+            <Sider>Sider</Sider>
+            <Content>Content</Content>
           </Layout>
-          <Footer />
+          <Footer>Footer</Footer>
         </Layout>
       </section>
       <section>
         <h1>第三个例子</h1>
         <Layout>
-          <Header />
+          <Header>Header</Header>
           <Layout>
-            <Content />
-            <Sider />
+            <Content>Content</Content>
+            <Sider>Sider</Sider>
           </Layout>
-          <Footer />
+          <Footer>Footer</Footer>
         </Layout>
       </section>
       <section>
         <h1>第四个例子</h1>
         <Layout>
-          <Sider />
+          <Sider>Sider</Sider>
           <Layout>
-            <Header />
-            <Content />
-            <Footer />
+            <Header>Header</Header>
+            <Content>Content</Content>
+            <Footer>Footer</Footer>
           </Layout>
         </Layout>
       </section>

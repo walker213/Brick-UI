@@ -6,7 +6,7 @@ import "./index.scss";
 
 const acp = addClassPrefixHOF("bui-dialog");
 
-interface Props extends React.HTMLAttributes<Element> {
+interface Props extends React.HTMLAttributes<HTMLElement> {
   visible: boolean;
   onOk: React.MouseEventHandler;
   onCancel: React.MouseEventHandler;
@@ -30,7 +30,7 @@ interface dialogMethods {
   destroy: () => void;
 }
 
-type Fhp<T> = React.FunctionComponent<T> & {
+type ComponentWithExtraApi<T> = React.FunctionComponent<T> & {
   info: (params: ApiParams) => dialogMethods;
   success: (params: ApiParams) => dialogMethods;
   error: (params: ApiParams) => dialogMethods;
@@ -38,7 +38,7 @@ type Fhp<T> = React.FunctionComponent<T> & {
   confirm: (params: ApiParams) => dialogMethods;
 };
 
-const Dialog: Fhp<Props> = props => {
+const Dialog: ComponentWithExtraApi<Props> = props => {
   const {
     visible,
     header,

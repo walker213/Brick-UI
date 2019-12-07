@@ -1,24 +1,20 @@
 import React, { ReactElement } from "react";
 import classnames from "classnames";
 import { addClassPrefixHOF } from "../../utils/classes";
-import Header from "./header";
-import Footer from "./footer";
-import Content from "./content";
-import Sider from "./sider";
 import "./index.scss";
 
-const acp = addClassPrefixHOF('bui-layout');
+const acp = addClassPrefixHOF("bui-layout");
 
 interface Props extends React.HTMLAttributes<HTMLElement> {}
 
-type Fhp<T> = React.FunctionComponent<T> & {
+type ComponentWithExtraApi<T> = React.FunctionComponent<T> & {
   Header: React.FunctionComponent;
   Footer: React.FunctionComponent;
   Content: React.FunctionComponent;
   Sider: React.FunctionComponent;
 };
 
-const Layout: Fhp<Props> = props => {
+const Layout: ComponentWithExtraApi<Props> = props => {
   const { className, children, ...restProps } = props;
   const hasAside =
     Array.isArray(children) &&
@@ -26,12 +22,45 @@ const Layout: Fhp<Props> = props => {
   return (
     <section
       className={classnames(className, acp(), {
-        [acp('hasAside')]: hasAside
+        [acp("hasAside")]: hasAside
       })}
       {...restProps}
     >
       {children}
     </section>
+  );
+};
+
+const Header: React.FunctionComponent<Props> = props => {
+  const { className, children, ...restProps } = props;
+  return (
+    <header className={classnames(className, acp("header"))} {...restProps}>
+      {children}
+    </header>
+  );
+};
+const Footer: React.FunctionComponent<Props> = props => {
+  const { className, children, ...restProps } = props;
+  return (
+    <footer className={classnames(className, acp("footer"))} {...restProps}>
+      {children}
+    </footer>
+  );
+};
+const Content: React.FunctionComponent<Props> = props => {
+  const { className, children, ...restProps } = props;
+  return (
+    <main className={classnames(className, acp("content"))} {...restProps}>
+      {children}
+    </main>
+  );
+};
+const Sider: React.FunctionComponent<Props> = props => {
+  const { className, children, ...restProps } = props;
+  return (
+    <aside className={classnames(className, acp("sider"))} {...restProps}>
+      {children}
+    </aside>
   );
 };
 
