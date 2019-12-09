@@ -1,11 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Icon test render successfully 1`] = `
-<svg
+<i
   className="bui-icon"
 >
-  <use
-    xlinkHref="#wechat"
-  />
-</svg>
+  <svg>
+    <use
+      xlinkHref="#wechat"
+    />
+  </svg>
+</i>
 `;

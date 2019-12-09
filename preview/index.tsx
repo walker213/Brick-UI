@@ -38,7 +38,7 @@ export const Index = () => {
             <Route path="/layout" component={LayoutExample}></Route>
           </Content>
         </Layout>
-        <Footer>lwg-Brick UI</Footer>
+        <Footer>&copy; lwg</Footer>
       </Layout>
     </Router>
   );
