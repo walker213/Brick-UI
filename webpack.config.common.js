@@ -1,10 +1,6 @@
 const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  entry: {
-    brick: "./lib/index.tsx"  // index改为brick直接是文件名？
-  },
   output: {
     path: path.resolve(__dirname, "dist/lib"),
     // library: "brick",
