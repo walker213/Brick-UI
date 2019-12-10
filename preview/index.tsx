@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDom from "react-dom";
-import { HashRouter as Router, Route, Link } from "react-router-dom";
+import { HashRouter as Router, Route, NavLink } from "react-router-dom";
 import './index.scss';
 import { Layout } from "../lib";
 import IconExample from "../lib/components/icon/iconExample";
@@ -19,16 +19,16 @@ export const Index = () => {
             <h2>组件</h2>
             <ul>
               <li>
-                <Link to="/icon">Icon</Link>
+                <NavLink to="/icon">Icon</NavLink>
               </li>
               <li>
-                <Link to="/button">Button</Link>
+                <NavLink to="/button">Button</NavLink>
               </li>
               <li>
-                <Link to="/dialog">Dialog</Link>
+                <NavLink to="/dialog">Dialog</NavLink>
               </li>
               <li>
-                <Link to="/layout">Layout</Link>
+                <NavLink to="/layout">Layout</NavLink>
               </li>
             </ul>
           </Sider>

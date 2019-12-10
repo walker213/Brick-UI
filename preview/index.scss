@@ -21,19 +21,29 @@
     align-items: center;
     justify-content: center;
   }
-  
+
   & > .bui-layout-sider {
     border-right: 1px solid $border-color;
-    padding: 20px 30px;
-    & li{
-      margin-top: 10px;
-      & a:hover{
+    ul {
+      margin: 10px 0;
+    }
+    li {
+      a {
+        display: block;
+        padding: 5px 30px;
+      }
+      a:hover {
+        color: $main-color;
+      }
+      a.active {
+        background: #e6f7ff;
+        border-right: 5px solid $main-color;
         color: $main-color;
       }
     }
   }
 
-  & > .bui-layout-content{
+  & > .bui-layout-content {
     padding: 20px 30px;
   }
 }
