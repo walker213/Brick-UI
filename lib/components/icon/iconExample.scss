@@ -1,0 +1,14 @@
+.bui-iconExample {
+  display: flex;
+  flex-wrap: wrap;
+  div {
+    margin: 1em;
+		width: 4em;
+		text-align: center;
+    .bui-icon {
+			display: block;
+      width: 2em;
+      height: 2em;
+    }
+  }
+}
