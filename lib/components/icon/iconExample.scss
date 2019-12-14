@@ -3,12 +3,16 @@
   flex-wrap: wrap;
   div {
     margin: 1em;
-		width: 4em;
+		width: 6em;
 		text-align: center;
     .bui-icon {
-			display: block;
-      width: 2em;
-      height: 2em;
+      display: block;
+      margin: 0 auto 5px;
+      width: 3em;
+      height: 3em;
+    }
+    span{
+      word-wrap:break-word;
     }
   }
 }
