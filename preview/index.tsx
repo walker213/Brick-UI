@@ -6,6 +6,7 @@ import { Layout } from "../lib";
 import IconExample from "../lib/components/icon/iconExample";
 import DialogExample from "../lib/components/dialog/dialogExample";
 import LayoutExample from "../lib/components/layout/layoutExample";
+import ButtonExample from "../lib/components/button/buttonExample";
 
 const { Header, Footer, Sider, Content } = Layout;
 
@@ -34,6 +35,7 @@ export const Index = () => {
           </Sider>
           <Content>
             <Route path="/icon" component={IconExample}></Route>
+            <Route path="/button" component={ButtonExample}></Route>
             <Route path="/dialog" component={DialogExample}></Route>
             <Route path="/layout" component={LayoutExample}></Route>
           </Content>
