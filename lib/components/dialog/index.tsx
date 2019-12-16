@@ -1,6 +1,6 @@
 import React, { Fragment, ReactElement, ReactNode } from "react";
 import ReactDom from "react-dom";
-import { Icon } from "../../index";
+import { Icon, Button } from "../../index";
 import { addClassPrefixHOF } from "../../utils/classes";
 import "./index.scss";
 
@@ -69,8 +69,8 @@ const Dialog: ComponentWithExtraApi<Props> = props => {
           footer
         ) : (
           <Fragment>
-            <button onClick={onOk}>ok</button>
-            <button onClick={onCancel}>cancel</button>
+            <Button onClick={onOk}>ok</Button>
+            <Button onClick={onCancel}>cancel</Button>
           </Fragment>
         )}
       </footer>
@@ -129,17 +129,17 @@ const dialogMaker = (
 
   const footer = isConfirm
     ? [
-        <button onClick={handleCancelClick} key="cancel">
+        <Button onClick={handleCancelClick} key="cancel">
           {cancelText || "取消"}
-        </button>,
-        <button onClick={handleOkClick} key="ok">
+        </Button>,
+        <Button onClick={handleOkClick} key="ok">
           {okText || "确定"}
-        </button>
+        </Button>
       ]
     : [
-        <button onClick={handleOkClick} key="ok">
+        <Button onClick={handleOkClick} key="ok">
           {okText || "知道了"}
-        </button>
+        </Button>
       ];
   const component = (
     <Dialog

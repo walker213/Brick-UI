@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Dialog } from "../../index";
+import { Dialog, Button } from "../../index";
 
 const IconExample: React.FunctionComponent = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -21,13 +21,13 @@ const IconExample: React.FunctionComponent = () => {
   }
   return (
     <div>
-      <button
+      <Button
         onClick={() => {
           setIsVisible(!isVisible);
         }}
       >
         普通dialog
-      </button>
+      </Button>
       <Dialog
         visible={isVisible}
         onOk={() => {}}
@@ -38,11 +38,11 @@ const IconExample: React.FunctionComponent = () => {
         hihi
       </Dialog>
 
-      <button onClick={info}>info</button>
-      <button onClick={success}>success</button>
-      <button onClick={error}>error</button>
-      <button onClick={warning}>warning</button>
-      <button onClick={confirm}>confirm</button>
+      <Button onClick={info}>info</Button>
+      <Button onClick={success}>success</Button>
+      <Button onClick={error}>error</Button>
+      <Button onClick={warning}>warning</Button>
+      <Button onClick={confirm}>confirm</Button>
     </div>
   );
 };
