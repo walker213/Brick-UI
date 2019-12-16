@@ -4,8 +4,10 @@ import { Button } from "../../index";
 
 const ButtonExample: React.FunctionComponent = () => {
   return (
-    <div className="bui-iconExample">
-      <Button onClick={e=>{console.log(e.target)}} icon='search'>hei</Button>
+    <div className="bui-buttonExample">
+      <Button icon='search' size='small'>hei</Button>
+      <Button icon='search'>hei</Button>
+      <Button icon='search' size='large'>hei</Button>
     </div>
   );
 };

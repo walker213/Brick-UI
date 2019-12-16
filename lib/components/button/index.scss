@@ -1,6 +1,39 @@
+@import '../../styles/default.scss';
+
+.bui-buttonExample{
+  display: flex;
+  align-items: flex-end;
+}
+
 .bui-btn {
+  line-height: 2em;
+  margin-right: 1em;
+  padding: 0 1em;
+  background-color: transparent;
+  border: 1px solid $border-color;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all .3s;
+  color: $btnText-color;
   &:active,
   &:focus {
     outline: none;
-	}
+  }
+  &:hover{
+    color: $main-color;
+    border-color: $main-color;
+  }
+  .bui-icon{
+    margin-right: 0.5em;
+    vertical-align: middle;
+  }
+
+  &-lg{
+    font-size: 1.14em;
+    line-height: 2.4em;
+  }
+  &-sm{
+    line-height: 1.5em;
+    padding: 0 0.5em;
+  }
 }
